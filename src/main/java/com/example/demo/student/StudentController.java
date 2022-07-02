@@ -4,8 +4,6 @@ import com.sun.istack.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.time.LocalDate;
-import java.time.Month;
 import java.util.List;
 
 
@@ -34,5 +32,12 @@ public class StudentController {
     @DeleteMapping(path = "{studentId}")
     public void deleteStudent(@PathVariable("studentId") @NotNull Long id) {
         studentService.deleteStudent(id);
+    }
+
+    @PutMapping(path = "{studentId}")
+    public void updateStudent(@PathVariable("studentId") @NotNull Long id,
+                              @RequestParam(required = false) String name,
+                              @RequestParam(required = false) String email) {
+        studentService.updateStudent(id, name, email);
     }
 }
