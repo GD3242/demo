@@ -1,7 +1,5 @@
-package student;
+package com.example.demo.student;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
@@ -9,6 +7,7 @@ import java.time.Month;
 import java.util.List;
 
 
+//@Component also works but Service is easier to understand
 @Service
 public class StudentService {
 
